@@ -1,7 +1,7 @@
-package com.mkrcoding.coloriageglouton;
+//package com.mkrcoding.coloriageglouton;
 
-public interface Graph {
-    void addEdge(String from, String to);
-    void displayColors();
+//public interface Graph {
+//    void addEdge(String from, String to);
+//    void displayColors();
 
-}
+//}

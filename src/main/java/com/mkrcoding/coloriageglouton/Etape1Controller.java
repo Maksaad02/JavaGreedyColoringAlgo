@@ -2,7 +2,6 @@ package com.mkrcoding.coloriageglouton;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
-import javafx.scene.control.Button;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
@@ -15,8 +14,7 @@ import java.io.IOException;
 public class Etape1Controller {
     @FXML
     private TextField tfNbrSommets; // Champ de saisie pour le nombre de sommets
-//    @FXML
-//    private Button btnNext; // Bouton pour passer à l'étape suivante
+
     public void onEnter(KeyEvent event) {
         // Vérifiez si la touche appuyée est "Entrée"
         if (event.getCode() == KeyCode.ENTER) {

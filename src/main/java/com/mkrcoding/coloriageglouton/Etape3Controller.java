@@ -1,11 +1,16 @@
 package com.mkrcoding.coloriageglouton;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ListView;
 import javafx.scene.control.Label;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class Etape3Controller {
 
@@ -108,8 +113,24 @@ public class Etape3Controller {
             return;
         }
 
-        // Afficher les résultats du coloriage
-        graph.displayColors();
-        lblError.setText("Coloriage terminé ! Vérifiez la console.");
+        try {
+            // Charger la nouvelle fenêtre
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/mkrcoding/coloriageglouton/resultDisplay.fxml"));
+            Parent root = loader.load();
+
+            // Obtenir le contrôleur et passer les données
+            ResultDisplayController controller = loader.getController();
+            int[] colors = graph.greedyColoring();
+            controller.displayResults(graph.getNomSommets(), graph.getAdj(), colors);
+
+            // Afficher la fenêtre
+            Stage stage = new Stage();
+            stage.setTitle("Résultat du coloriage");
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
+
 }

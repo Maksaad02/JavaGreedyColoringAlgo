@@ -47,9 +47,6 @@ public class Etape2Controller {
         tfNomSommet.clear();
         SommetsCount++;
 
-//        if (SommetsCount == totalSommets) {
-//            btnNext.setDisable(true);
-//        }
     }
     public void onEnter(KeyEvent event) {
         // Vérifiez si la touche appuyée est "Entrée"

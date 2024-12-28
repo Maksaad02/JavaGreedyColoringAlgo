@@ -45,8 +45,17 @@ public class GeneralGraph {
         }
     }
 
+    public String[] getNomSommets() {
+        return nomSommets;
+    }
 
-    private int[] greedyColoring() {
+    public List<List<Integer>> getAdj() {
+        return adj;
+    }
+
+
+
+    public int[] greedyColoring() {
         int[] result = new int[V]; // Result array to store colors of vertices
         Arrays.fill(result, -1);  // Initialize all vertices as uncolored (-1)
 
