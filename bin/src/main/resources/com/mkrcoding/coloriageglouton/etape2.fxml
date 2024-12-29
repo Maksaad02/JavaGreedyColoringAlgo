@@ -11,5 +11,5 @@
     <TextField fx:id="tfNomSommet" onKeyPressed="#onEnter" promptText="Nom du sommet" />
     <ListView fx:id="lvSommets" prefHeight="400.0" prefWidth="432.0" />
     <Button onAction="#onAddSommet" text="Ajouter" />
-    <Button fx:id="btnNext" onAction="#onNext" text="Suivant" />
+    <Button onAction="#onNext" text="Suivant" />
 </VBox>

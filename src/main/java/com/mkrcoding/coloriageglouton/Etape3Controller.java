@@ -32,30 +32,21 @@ public class Etape3Controller {
     private int edgesAdded = 0; // Nombre d'arêtes ajoutées
 
     @FXML
-    public void initializeGraph() {
-        // Désactiver les champs et boutons au démarrage
+    public void initializeGraph(GeneralGraph graph) {
+        this.graph = graph;
         tfEdge.setDisable(true);
         btnAddEdge.setDisable(true);
         btnFinish.setDisable(true);
     }
 
-    // Méthode appelée après la saisie du nombre total d'arêtes
     @FXML
     private void onValidateEdgeCount() {
         try {
-            // Récupérer et vérifier le nombre d'arêtes
             totalEdgesAllowed = Integer.parseInt(tfEdgeCount.getText().trim());
             if (totalEdgesAllowed <= 0) {
                 throw new IllegalArgumentException("Le nombre d'arêtes doit être supérieur à 0.");
             }
 
-            // Initialiser le graphe avec un nombre arbitraire de sommets (exemple : 26 pour A-Z)
-            graph = new GeneralGraph(totalEdgesAllowed);
-            for (int i = 0; i < totalEdgesAllowed; i++) {
-                graph.addSommet(String.valueOf((char) ('A' + i)), i);
-            }
-
-            // Activer les champs pour les arêtes
             tfEdge.setDisable(false);
             btnAddEdge.setDisable(false);
             lblError.setText("Entrez les arêtes (exemple : AB).");
@@ -67,11 +58,9 @@ public class Etape3Controller {
         }
     }
 
-    // Méthode pour ajouter une arête
     @FXML
     private void onAddEdge() {
         try {
-            // Vérifier si le nombre total d'arêtes est atteint
             if (edgesAdded >= totalEdgesAllowed) {
                 throw new IllegalStateException("Nombre maximum d'arêtes atteint !");
             }
@@ -84,15 +73,12 @@ public class Etape3Controller {
             String from = String.valueOf(edge.charAt(0));
             String to = String.valueOf(edge.charAt(1));
 
-            // Ajouter l'arête au graphe
             graph.addEdge(from, to);
 
-            // Ajouter l'arête à la liste
             lvEdges.getItems().add(edge);
             edgesAdded++;
             tfEdge.clear();
 
-            // Activer le bouton Terminer si toutes les arêtes sont ajoutées
             if (edgesAdded == totalEdgesAllowed) {
                 btnFinish.setDisable(false);
                 lblError.setText("Toutes les arêtes ont été ajoutées. Cliquez sur Terminer.");
@@ -105,7 +91,6 @@ public class Etape3Controller {
         }
     }
 
-    // Méthode pour terminer et lancer l'algorithme
     @FXML
     private void onFinish() {
         if (edgesAdded != totalEdgesAllowed) {
@@ -114,16 +99,13 @@ public class Etape3Controller {
         }
 
         try {
-            // Charger la nouvelle fenêtre
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/mkrcoding/coloriageglouton/resultDisplay.fxml"));
             Parent root = loader.load();
 
-            // Obtenir le contrôleur et passer les données
             ResultDisplayController controller = loader.getController();
             int[] colors = graph.greedyColoring();
             controller.displayResults(graph.getNomSommets(), graph.getAdj(), colors);
 
-            // Afficher la fenêtre
             Stage stage = new Stage();
             stage.setTitle("Résultat du coloriage");
             stage.setScene(new Scene(root));
@@ -132,5 +114,4 @@ public class Etape3Controller {
             e.printStackTrace();
         }
     }
-
 }

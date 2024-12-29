@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" spacing="10" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mkrcoding.coloriageglouton.ResultDisplayController">
+    <Label fx:id="lblTitle" style="-fx-font-size: 18px;" text="Résultat du coloriage" />
+    <Canvas fx:id="canvasGraph" width="600" height="400" />
+    <Label fx:id="lblInfo" style="-fx-font-size: 14px;" wrapText="true" />
+</VBox>
