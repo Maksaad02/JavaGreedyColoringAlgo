@@ -1,7 +1,8 @@
 ﻿# JavaGreedyColoringAlgo
 Coloriage Glouton - Graph Coloring Application
   This JavaFX-based project visualizes and solves graph coloring problems using a greedy algorithm. 
-  It allows users to create custom graphs, define edges, and compute the minimum number of colors needed to color the graph, ensuring that no two adjacent vertices share the same color.
+  It allows users to create custom graphs, define edges, and compute the minimum number of colors 
+  needed to color the graph, ensuring that no two adjacent vertices share the same color.
 
 Features
 . Create and manage custom graphs with named vertices and edges.
@@ -9,8 +10,10 @@ Features
 . Supports disconnected graphs and ensures efficient vertex coloring.
 
 Problem Example
-  Problem: How can a class schedule be created where no two classes sharing the same teacher or room overlap in timing?
-Solution: The greedy coloring algorithm assigns colors (time slots) to classes such that no conflicting classes have the same time.
+  Problem: How can a class schedule be created where no two classes sharing the same teacher
+  or room overlap in timing?
+Solution: The greedy coloring algorithm assigns colors (time slots) to classes
+such that no conflicting classes have the same time.
 
 Technologies Used
 . Java (Core logic).
