@@ -31,3 +31,10 @@ Steps:
 Acknowledgments
   JavaFX Documentation: https://openjfx.io/
   Graph Theory Resources: https://en.wikipedia.org/wiki/Graph_coloring
+
+
+## Contributors
+
+- Rajib Nouhaila
+- (https://github.com/Nouhailarajib)
+- Makroum Saad (https://github.com/Maksaad02)
