@@ -38,6 +38,5 @@ Acknowledgments
 
 ## Contributors
 
-- Rajib Nouhaila
-- (https://github.com/Nouhailarajib)
+- Rajib Nouhaila (https://github.com/Nouhailarajib)
 - Makroum Saad (https://github.com/Maksaad02)
